@@ -12,7 +12,14 @@ function calc(num1: real; num2: real; op: string):real;
       else 
         if op='*' then res:=num1*num2
       else 
-        if op='/' then res:=num1/num2;
+        if op='/' then 
+          begin
+            if num2=0 then 
+              begin
+                Writeln('ZeroDivisionError');
+              end;
+            res:=num1/num2;
+          end;
       calc:=res;
     end;
 
